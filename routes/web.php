@@ -62,7 +62,7 @@ Route::middleware('auth')->group(function () {
     /* OutgoingDocument destroy */ Route::delete('outgoing-document/{outgoing_document}', [Controllers\OutgoingDocumentController::class, 'destroy'])->name('outgoing-document.destroy')->middleware('permission:outgoing-document.destroy');
 
     /*  DocumentReport index */ Route::get('document_report', [Controllers\DocumentReportController::class, 'index'])->name('document_report.index')->middleware('permission:document_report.index');
-    /*  DocumentReport show */ Route::get('document_report_show', [Controllers\DocumentReportController::class, 'show'])->name('document_report.show')->middleware('permission:document_report.show');
+    /*  DocumentReport show */ Route::post('document_report_show', [Controllers\DocumentReportController::class, 'show'])->name('document_report.show')->middleware('permission:document_report.show');
 
     // /* Profile edit */ Route::get('/profile', [Controllers\ProfileController::class, 'edit'])->name('profile.edit');
     // /* Profile update */ Route::patch('/profile', [Controllers\ProfileController::class, 'update'])->name('profile.update');
