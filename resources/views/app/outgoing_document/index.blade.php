@@ -11,11 +11,12 @@
 
         <x-table>
             <x-slot name="thead">
-                <th class="text-center">Kode Dokumen</th>
-                <th>Tanggal Keluar</th>
+                <th class="text-center">Kode</th>
+                <th>Tgl. Keluar</th>
                 <th>Kategori</th>
                 <th>File</th>
-                <th>Petugas Pengirim</th>
+                <th>Adm. Pengirim</th>
+                <th>Resi</th>
                 <th>Aksi</th>
             </x-slot>
 
@@ -26,6 +27,7 @@
                     <td>{{ ucwords($data->category->category_name) }}</td>
                     <td><a href="{{ Storage::url($data->file) }}">Unduh Dokumen</a></td>
                     <td>{{ ucwords($data->user->fullname) }}</td>
+                    <td>{{ ucwords($data->expedition) }} // {{ strtoupper($data->receipt_number) }}</td>
                     <td>
                         <x-table.btn-delete action="{{ route('outgoing-document.destroy', $data->id) }}" />
                     </td>

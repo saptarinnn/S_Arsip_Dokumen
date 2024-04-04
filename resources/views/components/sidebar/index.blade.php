@@ -29,6 +29,7 @@
         <x-sidebar.divide>Transaksi</x-sidebar.divide>
         <x-sidebar.link href="{{ route('incoming-document.index') }}" icon="layer-plus">Dokumen Masuk</x-sidebar.link>
         <x-sidebar.link href="{{ route('outgoing-document.index') }}" icon="layer-minus">Dokumen Keluar</x-sidebar.link>
+        <x-sidebar.link href="{{ route('cek-resi.index') }}" icon="receipt">Cek Resi</x-sidebar.link>
 
         @can('document_report.index')
             <x-sidebar.divide>Laporan</x-sidebar.divide>

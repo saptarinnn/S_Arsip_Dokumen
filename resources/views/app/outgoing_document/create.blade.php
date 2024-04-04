@@ -13,12 +13,16 @@
                 @endforeach
             </x-form.select>
             <x-form.input label="Berkas Dokumen" name="file" value="{{ old('file') }}" type="file" required />
-            <x-form.select name="user_id" label="Petugas Pengirim Dokumen" required>
+            <x-form.input label="Petugas Pengirim Dokumen" name=""
+                value="{{ ucwords(auth()->user()->fullname) }}" required readonly />
+            <x-form.select name="expedition" label="Ekspedisi" required>
                 <option value="">Pilih salah satu</option>
-                @foreach ($users as $user)
-                    <option value="{{ $user->id }}">{{ ucwords($user->fullname) }}</option>
+                @foreach ($lists->object() as $list)
+                    <option value="{{ $list->code }}">{{ ucwords($list->description) }}</option>
                 @endforeach
             </x-form.select>
+            <x-form.input label="Nomor Resi" name="receipt_number" value="{{ old('receipt_number') }}" required />
+            <x-form.input label="" name="user_id" value="{{ auth()->user()->id }}" required type="hidden" />
 
             <div class="gap-3 d-flex">
                 <x-form.back href="{{ route('outgoing-document.index') }}" />

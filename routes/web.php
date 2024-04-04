@@ -2,6 +2,7 @@
 
 use App\Http\Controllers;
 use App\Http\Controllers\DashboardController;
+use FontLib\Table\Type\name;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function () {
@@ -60,6 +61,9 @@ Route::middleware('auth')->group(function () {
     /* OutgoingDocument create */ Route::get('outgoing-document/create', [Controllers\OutgoingDocumentController::class, 'create'])->name('outgoing-document.create')->middleware('permission:outgoing-document.create');
     /* OutgoingDocument store */ Route::post('outgoing-document', [Controllers\OutgoingDocumentController::class, 'store'])->name('outgoing-document.store')->middleware('permission:outgoing-document.store');
     /* OutgoingDocument destroy */ Route::delete('outgoing-document/{outgoing_document}', [Controllers\OutgoingDocumentController::class, 'destroy'])->name('outgoing-document.destroy')->middleware('permission:outgoing-document.destroy');
+
+    /* CekResi index */ Route::get('cek-resi', [Controllers\CekResiController::class, 'index'])->name('cek-resi.index')->middleware('permission:cek-resi.index');
+    /* CekResi index */ Route::post('cek-resi_show', [Controllers\CekResiController::class, 'show'])->name('cek-resi.show')->middleware('permission:cek-resi.show');
 
     /*  DocumentReport index */ Route::get('document_report', [Controllers\DocumentReportController::class, 'index'])->name('document_report.index')->middleware('permission:document_report.index');
     /*  DocumentReport show */ Route::post('document_report_show', [Controllers\DocumentReportController::class, 'show'])->name('document_report.show')->middleware('permission:document_report.show');

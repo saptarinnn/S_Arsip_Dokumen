@@ -12,7 +12,7 @@ class OutgoingDocument extends Model
     use HasFactory, HasUuids;
 
     protected $fillable = [
-        'document_code', 'date_out', 'category_id', 'file', 'user_id',
+        'document_code', 'date_out', 'category_id', 'file', 'user_id', 'expedition', 'receipt_number',
     ];
 
     public function category(): BelongsTo

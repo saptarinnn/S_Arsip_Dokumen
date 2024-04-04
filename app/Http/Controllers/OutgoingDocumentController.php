@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage as Sto;
 use Illuminate\View\View;
 
@@ -29,18 +30,20 @@ class OutgoingDocumentController extends Controller
             'title' => 'Tambah '.$this->title,
             'categories' => Category::all(),
             'users' => User::all(),
+            'lists' => Http::get('https://api.binderbyte.com/v1/list_courier?api_key=f584da5e67c0332e738d035482b1f709c337d93e00e2ca7eda4379806862bb5c'),
         ]);
     }
 
     public function store(Request $request): RedirectResponse
     {
-        /* Validation */
         $validated = $request->validate([
             'document_code' => 'required|max:10',
             'date_out' => 'required|date',
             'category_id' => 'required',
             'file' => 'required|file|mimes:pdf',
             'user_id' => 'required',
+            'expedition' => 'required',
+            'receipt_number' => 'required',
         ]);
 
         DB::beginTransaction();
