@@ -1,0 +1,38 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app-D1Ur_yZJ.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "css": [
+      "assets/app-DfDcsm2Q.css"
+    ],
+    "assets": [
+      "assets/boxicons-CSrLvhY_.eot",
+      "assets/boxicons-CeGEncwm.woff2",
+      "assets/boxicons-CTVby2V1.woff",
+      "assets/boxicons-EIQNrSje.ttf",
+      "assets/boxicons-Dp7W9qN3.svg"
+    ]
+  },
+  "resources/vendor/fonts/boxicons/boxicons.eot": {
+    "file": "assets/boxicons-CSrLvhY_.eot",
+    "src": "resources/vendor/fonts/boxicons/boxicons.eot"
+  },
+  "resources/vendor/fonts/boxicons/boxicons.svg": {
+    "file": "assets/boxicons-Dp7W9qN3.svg",
+    "src": "resources/vendor/fonts/boxicons/boxicons.svg"
+  },
+  "resources/vendor/fonts/boxicons/boxicons.ttf": {
+    "file": "assets/boxicons-EIQNrSje.ttf",
+    "src": "resources/vendor/fonts/boxicons/boxicons.ttf"
+  },
+  "resources/vendor/fonts/boxicons/boxicons.woff": {
+    "file": "assets/boxicons-CTVby2V1.woff",
+    "src": "resources/vendor/fonts/boxicons/boxicons.woff"
+  },
+  "resources/vendor/fonts/boxicons/boxicons.woff2": {
+    "file": "assets/boxicons-CeGEncwm.woff2",
+    "src": "resources/vendor/fonts/boxicons/boxicons.woff2"
+  }
+}
